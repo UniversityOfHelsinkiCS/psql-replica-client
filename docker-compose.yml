@@ -11,9 +11,8 @@ services:
       POSTGRES_PASSWORD: secret
       PG_REP_USER: rep
       PG_REP_PASSWORD: repsecret
-      PG_REP_HOST: localhost
+      PG_REP_HOST: svm-123.ema
       PG_REP_PORT: 6662
       PGSSLMODE: verify-ca
-    network_mode: host
 volumes:
   replica_data:
