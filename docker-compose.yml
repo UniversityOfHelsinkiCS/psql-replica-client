@@ -1,0 +1,19 @@
+version: "3"
+services:
+  replica:
+    container_name: replica_db
+    build: .
+    volumes:
+      - replica_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: test_user
+      POSTGRES_DB: test_db
+      POSTGRES_PASSWORD: secret
+      PG_REP_USER: rep
+      PG_REP_PASSWORD: repsecret
+      PG_REP_HOST: localhost
+      PG_REP_PORT: 6662
+      PGSSLMODE: verify-ca
+    network_mode: host
+volumes:
+  replica_data:
