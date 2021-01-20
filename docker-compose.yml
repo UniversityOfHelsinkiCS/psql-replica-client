@@ -1,4 +1,4 @@
-version: "3"
+version: "3.5"
 services:
   replica:
     container_name: replica_db
@@ -13,6 +13,7 @@ services:
       PG_REP_PASSWORD: repsecret
       PG_REP_HOST: svm-123.ema
       PG_REP_PORT: 6662
+      REP_SLOT_NAME: updater
       PGSSLMODE: verify-ca
 volumes:
   replica_data:
